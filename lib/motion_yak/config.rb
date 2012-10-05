@@ -7,5 +7,21 @@ module MotionYak
    def api_key
     @@api_key
    end
+   
+   def callback=(c)
+    @@callback =  c
+   end
+   
+   def callback
+    @@callback
+   end
+   
+   def push=(c)
+    @@push =  c
+   end
+   
+   def push
+    @@push
+   end
   end
 end
