@@ -1,30 +1,30 @@
 module MotionYak
   module Config
-   def api_key=(a)
+   def self.api_key=(a)
     @@api_key =  a
    end 
    
-   def api_key
+   def self.api_key
     @@api_key
    end
    
-   def callback=(c)
+   def self.callback=(c)
     @@callback =  c
    end
    
-   def callback
+   def self.callback
     @@callback
    end
    
-   def push=(c)
+   def self.push=(c)
     @@push =  c
    end
    
-   def push
+   def self.push
     @@push
    end
    
-   def push_params
+   def self.push_params
     (@@push ? "True" : "False")
    end
   end
