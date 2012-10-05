@@ -10,7 +10,6 @@ end
 
 require 'motion_yak/request'
 require 'motion_yak/config'
-require 'motion_yak/json'
 require 'motion_yak/base'
 
 module MotionYak
