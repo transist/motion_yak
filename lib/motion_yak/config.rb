@@ -23,5 +23,9 @@ module MotionYak
    def push
     @@push
    end
+   
+   def push_params
+    (@@push ? "True" : "False")
+   end
   end
 end

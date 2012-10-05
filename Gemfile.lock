@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    motion_yak (0.0.10)
+    motion_yak (0.0.11)
       bubble-wrap
 
 GEM
