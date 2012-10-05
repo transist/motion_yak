@@ -13,7 +13,7 @@ module MotionYak
     end
 
     def self.api_url(url)
-      [self.base_url, MotionYak.key, 'json', url].join('/')
+      [self.base_url, MotionYak::Config.api_key, 'json', url].join('/')
     end
 
     def self.new_domain(domain, &b)
