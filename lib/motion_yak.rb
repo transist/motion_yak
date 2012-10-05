@@ -7,3 +7,10 @@ Motion::Project::App.setup do |app|
     app.files.unshift(file)
   end
 end
+
+module MotionYak
+  
+end
+
+require 'motion_yak/request'
+require 'motion_yak/config'
