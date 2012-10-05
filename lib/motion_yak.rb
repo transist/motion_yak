@@ -29,21 +29,21 @@ module MotionYak
     [self.base_url, MotionYak.key, 'json', url].join('/')
   end
   
-  def self.new_domain(domain)
+  def self.new_domain(domain, &block)
     params = {'Domain' => domain, 'CallbackURL' => MotionYak::Config.callback, 'PushEmail' => MotionYak::Config.push_params}
     MotionYak::Request.post self.api_url('register/domain/'), params do |json|
-      p json
+      block.call(json)
     end
   end
   
-  def self.new_address(address)
+  def self.new_address(address, &block)
     params = {'Address' => address, 'CallbackURL' => MotionYak::Config.callback, 'PushEmail' => MotionYak::Config.push_params}
     MotionYak::Request.post self.api_url('register/address/'), params do |json|
-      p json
+      block.call(json)
     end
   end
   
-  def self.send_email(options)
+  def self.send_email(options, &block)
     params = {}
     params['FromAddress']    = options[:from]
     params['FromName']       = options[:from_name]
@@ -58,7 +58,7 @@ module MotionYak
     params['Headers']        = options[:headers]
     params['Attachments']    = options[:attachments]
     MotionYak::Request.post self.api_url('send/email/'), params do |json|
-      p json
+      block.call(json)
     end
   end
 end
