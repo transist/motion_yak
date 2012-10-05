@@ -32,18 +32,18 @@ module MotionYak
 
     def self.send_email(options, &b)
       params = {}
-      params['FromAddress']    = options[:from]
-      params['FromName']       = options[:from_name]
-      params['SenderAddress']  = options[:sender_address]
-      params['ToAddress']      = options[:to]
-      params['ReplyToAddress'] = options[:reply_address]
-      params['CcAddress']      = options[:cc]
-      params['BccAddress']     = options[:bcc]
-      params['Subject']        = options[:subject]
-      params['HtmlBody']       = options[:html]
-      params['TextBody']       = options[:text]
-      params['Headers']        = options[:headers]
-      params['Attachments']    = options[:attachments]
+      params['FromAddress']    = options[:from]           if options[:from]
+      params['FromName']       = options[:from_name]      if options[:from_name]
+      params['SenderAddress']  = options[:sender_address] if options[:sender_address]
+      params['ToAddress']      = options[:to]             if options[:to]
+      params['ReplyToAddress'] = options[:reply_address]  if options[:reply_address]
+      params['CcAddress']      = options[:cc]             if options[:cc]
+      params['BccAddress']     = options[:bcc]            if options[:bcc]
+      params['Subject']        = options[:subject]        if options[:subject]
+      params['HtmlBody']       = options[:html]           if options[:html]
+      params['TextBody']       = options[:text]           if options[:text]
+      params['Headers']        = options[:headers]        if options[:headers]
+      params['Attachments']    = options[:attachments]    if options[:attachments]
       MotionYak::Request.post self.api_url('send/email/'), params do |json|
         b.call(json)
       end
