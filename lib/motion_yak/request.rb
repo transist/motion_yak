@@ -6,14 +6,14 @@ module MotionYak
        block.call(json)
      end
    end
-   def self.put(url, params, data)
-     BW::HTTP.put(url, {payload: data}) do |response|
+   def self.put(url, params)
+     BW::HTTP.put(url, {payload: params}) do |response|
        json = BW::JSON.parse(response.body.to_str)
        block.call(json)
      end
    end
-   def self.post(url, params, data)
-     BW::HTTP.post(url, {payload: data}) do |response|
+   def self.post(url, params)
+     BW::HTTP.post(url, {payload: params}) do |response|
        json = BW::JSON.parse(response.body.to_str)
        block.call(json)
      end

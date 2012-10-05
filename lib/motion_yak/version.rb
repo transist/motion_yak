@@ -1,5 +1,5 @@
 module MotionYak
-  VERSION = '0.0.8' unless defined?(MotionYak::VERSION)
+  VERSION = '0.0.9' unless defined?(MotionYak::VERSION)
   MIN_MOTION_VERSION = '1.24'
 
   module_function
