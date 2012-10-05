@@ -30,7 +30,7 @@ module MotionYak
   end
   
   def self.new_domain(domain)
-    params = {'Domain': domain, 'CallbackURL': MotionYak::Config.callback, 'PushEmail': MotionYak::Config.push}
+    params = {'Domain' => domain, 'CallbackURL' => MotionYak::Config.callback, 'PushEmail' => MotionYak::Config.push}
     MotionYak::Request.post self.api_url('register/domain/'), params do |json|
       p json
     end
