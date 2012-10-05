@@ -1,15 +1,16 @@
-GIT
-  remote: git://github.com/rubymotion/BubbleWrap.git
-  revision: 33a9beffd4bd963784db7f92699de5aa42e66d8d
+PATH
+  remote: .
   specs:
-    bubble-wrap (1.1.4)
+    motion_yak (1.1.4)
+      bubble-wrap
 
 GEM
   remote: http://rubygems.org/
   specs:
+    bubble-wrap (1.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bubble-wrap!
+  motion_yak!
